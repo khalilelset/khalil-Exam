@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love - 26.8.2002</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0d26 100%);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Animated Background */
+        .background-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .heart-bg {
+            position: absolute;
+            color: rgba(186, 135, 255, 0.2);
+            animation: floatUp 20s infinite linear;
+            font-size: 30px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .star {
+            position: absolute;
+            color: #dbb9ff;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at center, rgba(186, 135, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .birthday-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ba87ff, #f0d9ff, #ba87ff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #f0d9ff;
+            text-shadow: 0 0 40px rgba(186, 135, 255, 0.6);
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #dbb9ff;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* First Image Section - Her Photo */
+        .her-photo-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, transparent, rgba(186, 135, 255, 0.05), transparent);
+        }
+
+        .section-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ba87ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(186, 135, 255, 0.5);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #f0d9ff;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .image-container {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .image-frame {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0d26, #2a1d36);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 60px rgba(186, 135, 255, 0.3),
+                inset 0 0 60px rgba(186, 135, 255, 0.1);
+            transition: transform 0.6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ba87ff, #f0d9ff, #ba87ff, #f0d9ff);
+            background-size: 300% 300%;
+            border-radius: 30px;
+            z-index: -1;
+            animation: borderGlow 4s ease infinite;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .image-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 30px 80px rgba(186, 135, 255, 0.4),
+                inset 0 0 80px rgba(186, 135, 255, 0.15);
+        }
+
+        .image-placeholder {
+            color: #ba87ff;
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .corner-heart {
+            position: absolute;
+            font-size: 40px;
+            color: #ba87ff;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .corner-heart:nth-child(1) { top: -20px; left: -20px; }
+        .corner-heart:nth-child(2) { top: -20px; right: -20px; }
+        .corner-heart:nth-child(3) { bottom: -20px; left: -20px; }
+        .corner-heart:nth-child(4) { bottom: -20px; right: -20px; }
+
+        /* Message Section */
+        .message-section {
+            padding: 100px 20px;
+            background: radial-gradient(ellipse at center, rgba(186, 135, 255, 0.08) 0%, transparent 70%);
+        }
+
+        .message-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(26, 13, 38, 0.6);
+            border-radius: 30px;
+            padding: 60px;
+            border: 1px solid rgba(186, 135, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .message-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #f0d9ff;
+            margin-bottom: 40px;
+            text-shadow: 0 0 30px rgba(186, 135, 255, 0.6);
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #f0d9ff;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .message-text:first-of-type {
+            font-size: 1.3rem;
+            color: #ba87ff;
+            font-weight: 400;
+        }
+
+        /* Our Photo Section */
+        .our-photo-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, transparent, rgba(186, 135, 255, 0.05), transparent);
+        }
+
+        .our-photo-section .image-container {
+            width: 700px;
+            height: 500px;
+        }
+
+        /* Infinity Section */
+        .infinity-section {
+            padding: 150px 20px;
+            text-align: center;
+            background: radial-gradient(ellipse at center, rgba(186, 135, 255, 0.15) 0%, transparent 60%);
+            width: 100%;
+        }
+
+        .infinity-question {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #ba87ff;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 40px rgba(186, 135, 255, 0.6);
+        }
+
+        .infinity-wrapper {
+            position: relative;
+            display: inline-block;
+            padding: 40px;
+        }
+
+        .infinity-symbol {
+            width: 700px;
+            height: 300px;
+            position: relative;
+            filter: drop-shadow(0 0 50px rgba(186, 135, 255, 0.9));
+            animation: infinityGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes infinityGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 40px rgba(186, 135, 255, 0.7))
+                        drop-shadow(0 0 70px rgba(186, 135, 255, 0.5))
+                        drop-shadow(0 0 100px rgba(240, 217, 255, 0.3));
+                transform: scale(1);
+            }
+            50% {
+                filter: drop-shadow(0 0 60px rgba(186, 135, 255, 1))
+                        drop-shadow(0 0 100px rgba(186, 135, 255, 0.8))
+                        drop-shadow(0 0 150px rgba(240, 217, 255, 0.6));
+                transform: scale(1.05);
+            }
+        }
+
+        .infinity-symbol svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .infinity-answer {
+            margin-top: 60px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #f0d9ff;
+            text-shadow: 0 0 40px rgba(240, 217, 255, 0.9);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 50px 20px;
+            text-align: center;
+            background: rgba(26, 13, 38, 0.3);
+        }
+
+        .footer-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ba87ff;
+            text-shadow: 0 0 20px rgba(186, 135, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .birthday-date { font-size: 2.5rem; }
+            .main-title { font-size: 2.5rem; }
+            .infinity-question { font-size: 2.5rem; }
+            .image-container { 
+                width: 90%; 
+                max-width: 400px;
+                height: 500px;
+            }
+            .our-photo-section .image-container {
+                width: 90%;
+                max-width: 450px;
+                height: 350px;
+            }
+            .message-container { padding: 40px 20px; }
+            .infinity-symbol { width: 300px; height: 120px; }
+            .infinity-answer { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="floating-hearts" id="floatingHearts"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="birthday-date">26 August 2002</div>
+            <h1 class="main-title">Happy Birthday, My Precious Angel</h1>
+            <p class="subtitle">A celebration of the day my world became complete</p>
+        </div>
+
+        <!-- Her Photo Section -->
+        <div class="her-photo-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">The Light of My Life</h2>
+                <p class="section-subtitle">The one who makes my heart skip a beat every single day</p>
+                
+                <div class="image-container">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <p style="font-size: 60px; margin-bottom: 20px;">👑</p>
+                            <p>Your Beautiful Photo Here</p>
+                            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">
+                                Replace with:<br>
+                                &lt;img src="her-photo.jpg" style="width:100%; height:100%; object-fit:cover;"&gt;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="decorative-elements">
+                        <span class="corner-heart">💜</span>
+                        <span class="corner-heart">💜</span>
+                        <span class="corner-heart">💜</span>
+                        <span class="corner-heart">💜</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+            <div class="message-container">
+                <h2 class="message-title">💜 My Heartfelt Message to You 💜</h2>
+                
+                <p class="message-text">
+                    My Dearest Love, My Forever Valentine,
+                </p>
+                
+                <p class="message-text">
+                    Today marks another year of your beautiful existence, and I find myself overwhelmed with gratitude that the universe brought you into this world on August 26th, 2002. You are not just my girlfriend; you are my best friend, my confidant, my inspiration, and the keeper of my heart.
+                </p>
+                
+                <p class="message-text">
+                    Every morning I wake up thinking of your smile, and every night I fall asleep grateful for another day spent loving you. Your laughter is my favorite melody, your happiness is my life's mission, and your love is the greatest gift I've ever received.
+                </p>
+                
+                <p class="message-text">
+                    You've taught me what true love means - it's in the way you hold my hand when I'm scared, the way you believe in me when I doubt myself, and the way you make even the ordinary moments feel like magic. With you, I've discovered that home isn't a place; it's wherever you are.
+                </p>
+                
+                <p class="message-text">
+                    On this special day, I want to promise you that I will love you through every season of life. I will be your strength when you feel weak, your smile when you're sad, and your biggest cheerleader in all your dreams. You deserve the entire universe, and I'll spend my lifetime trying to give it to you.
+                </p>
+                
+                <p class="message-text" style="color: #ba87ff; font-size: 1.4rem; margin-top: 40px;">
+                    Happy Birthday, my angel. Thank you for being born, for being you, and for choosing to share your precious heart with me. I love you beyond words, beyond time, beyond measure.
+                </p>
+                
+                <p class="message-text" style="font-family: 'Dancing Script', cursive; font-size: 1.6rem; color: #f0d9ff; margin-top: 30px;">
+                    Forever and Always Yours 💜
+                </p>
+            </div>
+        </div>
+
+        <!-- Our Photo Section -->
+        <div class="our-photo-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Our Beautiful Journey</h2>
+                <p class="section-subtitle">Two hearts, one soul, infinite memories</p>
+                
+                <div class="image-container">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <p style="font-size: 60px; margin-bottom: 20px;">💑</p>
+                            <p>Our Perfect Moment Together</p>
+                            <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7;">
+                                Replace with:<br>
+                                &lt;img src="couple-photo.jpg" style="width:100%; height:100%; object-fit:cover;"&gt;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="decorative-elements">
+                        <span class="corner-heart">💕</span>
+                        <span class="corner-heart">💕</span>
+                        <span class="corner-heart">💕</span>
+                        <span class="corner-heart">💕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infinity Section -->
+        <div class="infinity-section">
+            <h2 class="infinity-question">How Long Will I Stay With You?</h2>
+            
+            <div class="infinity-wrapper">
+                <div class="infinity-symbol">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+  <defs>
+    <!-- Animated Gradient -->
+    <linearGradient id="infinityGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#ba87ff;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#ba87ff;#f0d9ff;#dbb9ff;#ba87ff" 
+                 dur="4s" 
+                 repeatCount="indefinite" />
+      </stop>
+      <stop offset="25%" style="stop-color:#dbb9ff;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#dbb9ff;#ba87ff;#f0d9ff;#dbb9ff" 
+                 dur="4s" 
+                 repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" style="stop-color:#f0d9ff;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#f0d9ff;#dbb9ff;#ba87ff;#f0d9ff" 
+                 dur="4s" 
+                 repeatCount="indefinite" />
+      </stop>
+      <stop offset="75%" style="stop-color:#dbb9ff;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#dbb9ff;#f0d9ff;#ba87ff;#dbb9ff" 
+                 dur="4s" 
+                 repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" style="stop-color:#ba87ff;stop-opacity:1">
+        <animate attributeName="stop-color" 
+                 values="#ba87ff;#dbb9ff;#f0d9ff;#ba87ff" 
+                 dur="4s" 
+                 repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Scaled Infinity Path -->
+  <path d="M84.53 39.43a20 20 0 0 0-17.84-9.2 18 18 0 0 0-13.75 7.27c.3.48.61.93.87 1.43l3.6 6.8.55-1.05a11 11 0 0 1 9.07-6.24 11.7 11.7 0 1 1 0 23.4 11 11 0 0 1-9.07-6.23L56 50l-4.9-9.3a19 19 0 0 0-15.9-10.6 19.8 19.8 0 1 0 0 39.6 18 18 0 0 0 13.75-7.27c-.3-.48-.61-.93-.87-1.43l-3.6-6.9-.55 1.05a11 11 0 0 1-9.07 6.24 11.7 11.7 0 0 1-10.52-5.6 11.6 11.6 0 0 1 0-12.05 11.8 11.8 0 0 1 10.04-5.62h.5a11 11 0 0 1 9.07 6.23l2.88 5.47 4.9 9.3a19 19 0 0 0 15.9 10.6h.85a19.8 19.8 0 0 0 16.8-30.1z"
+        fill="none" 
+        stroke="url(#infinityGradient)" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        filter="url(#glow)"
+        opacity="0.95"/>
+</svg>
+
+
+                </div>
+            </div>
+            
+            <div class="infinity-answer">Forever and Beyond Eternity 💜</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer" >
+            <p class="footer-text">You Are My Today, Tomorrow, and Always</p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts background
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const hearts = ['💜', '💕', '💖', '💗', '💓'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-bg';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 20 + 's';
+                heart.style.animationDuration = (15 + Math.random() * 10) + 's';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                container.appendChild(heart);
+            }
+        }
+
+        // Create twinkling stars
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.textContent = '✨';
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.fontSize = Math.random() * 15 + 10 + 'px';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            document.querySelector('.background-container').appendChild(star);
+            
+            setTimeout(() => {
+                star.remove();
+            }, 3000);
+        }
+
+        // Mouse trail effect
+        let mouseTimer;
+        document.addEventListener('mousemove', (e) => {
+            if (mouseTimer) clearTimeout(mouseTimer);
+            
+            mouseTimer = setTimeout(() => {
+                const trail = document.createElement('div');
+                trail.style.position = 'fixed';
+                trail.style.left = e.clientX + 'px';
+                trail.style.top = e.clientY + 'px';
+                trail.style.color = '#ba87ff';
+                trail.style.fontSize = '24px';
+                trail.style.pointerEvents = 'none';
+                trail.style.zIndex = '9999';
+                trail.textContent = '💜';
+                trail.style.animation = 'fadeAway 1.5s ease forwards';
+                document.body.appendChild(trail);
+                
+                setTimeout(() => trail.remove(), 1500);
+            }, 100);
+        });
+
+        // Add fade away animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeAway {
+                0% { 
+                    opacity: 1; 
+                    transform: translate(0, 0) scale(1) rotate(0deg); 
+                }
+                100% { 
+                    opacity: 0; 
+                    transform: translate(0, -30px) scale(0.3) rotate(360deg); 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize animations
+        createFloatingHearts();
+        setInterval(createStar, 500);
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.background-container');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
