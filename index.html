@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Birthday My Love - 26.8.2002</title>
+    <title>Set Amanda 💜</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -91,7 +91,7 @@
       /* Header Section */
       .header {
         text-align: center;
-        padding: 80px 20px;
+        padding: 350px 20px 800px 20px;
         background: radial-gradient(
           circle at center,
           rgba(186, 135, 255, 0.1) 0%,
@@ -244,13 +244,26 @@
         text-align: center;
         padding: 40px;
         font-size: 1.1rem;
+        width: 100%;
+        height: 100%;
       }
 
+      .image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 27px;
+      }
+
+      /* Fixed Corner Hearts Positioning */
       .decorative-elements {
         position: absolute;
         width: 100%;
         height: 100%;
+        top: 0;
+        left: 0;
         pointer-events: none;
+        z-index: 10;
       }
 
       .corner-heart {
@@ -258,33 +271,38 @@
         font-size: 40px;
         color: #ba87ff;
         animation: heartbeat 1.5s ease-in-out infinite;
+        filter: drop-shadow(0 0 10px rgba(186, 135, 255, 0.8));
       }
 
       @keyframes heartbeat {
         0%,
         100% {
-          transform: scale(1);
+          transform: scale(1) translate(-50%, -50%);
         }
         50% {
-          transform: scale(1.2);
+          transform: scale(1.2) translate(-50%, -50%);
         }
       }
 
       .corner-heart:nth-child(1) {
-        top: -20px;
-        left: -20px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
       }
       .corner-heart:nth-child(2) {
-        top: -20px;
-        right: -20px;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
       }
       .corner-heart:nth-child(3) {
-        bottom: -20px;
-        left: -20px;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
       }
       .corner-heart:nth-child(4) {
-        bottom: -20px;
-        right: -20px;
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
       }
 
       /* Message Section */
@@ -426,6 +444,39 @@
         text-shadow: 0 0 20px rgba(186, 135, 255, 0.6);
       }
 
+      /* Birthday Cake */
+      .birthday-cake img {
+        width: 240px;
+        filter: drop-shadow(0 0 20px #ba87ff) drop-shadow(0 0 40px #f0d9ff);
+        animation: cakeGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes cakeGlow {
+        0%,
+        100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 20px rgba(186, 135, 255, 0.8))
+            drop-shadow(0 0 40px rgba(240, 217, 255, 0.6));
+        }
+        50% {
+          transform: scale(1.1);
+          filter: drop-shadow(0 0 30px rgba(240, 217, 255, 1))
+            drop-shadow(0 0 60px rgba(186, 135, 255, 1));
+        }
+      }
+
+      /* Fade Away Animation for Mouse Trail */
+      @keyframes fadeAway {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(0, -30px) scale(0.3) rotate(360deg);
+        }
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .birthday-date {
@@ -457,6 +508,9 @@
         .infinity-answer {
           font-size: 2rem;
         }
+        .corner-heart {
+          font-size: 30px;
+        }
       }
     </style>
   </head>
@@ -470,7 +524,14 @@
       <!-- Header -->
       <div class="header">
         <div class="birthday-date">26 August 2002</div>
-        <h1 class="main-title">Happy Birthday, My Precious Angel</h1>
+        <div class="birthday-cake">
+          <img
+            src="./pngtree-purple-birthday-cake-clipart-png-image_12373212.png"
+            alt="Birthday Cake"
+            style="margin-top: 50px; margin-bottom: 50px"
+          />
+        </div>
+        <h1 class="main-title">Happy Birthday, My Angel</h1>
         <p class="subtitle">
           A celebration of the day my world became complete
         </p>
@@ -487,13 +548,7 @@
           <div class="image-container">
             <div class="image-frame">
               <div class="image-placeholder">
-                <p style="font-size: 60px; margin-bottom: 20px">👑</p>
-                <p>Your Beautiful Photo Here</p>
-                <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7">
-                  Replace with:<br />
-                  &lt;img src="her-photo.jpg" style="width:100%; height:100%;
-                  object-fit:cover;"&gt;
-                </p>
+                <img src="./1002254717.jpg" alt="Your Beautiful Photo" />
               </div>
             </div>
             <div class="decorative-elements">
@@ -511,43 +566,40 @@
         <div class="message-container">
           <h2 class="message-title">💜 My Heartfelt Message to You 💜</h2>
 
-          <p class="message-text">My Dearest Love, My Forever Valentine,</p>
+          <p class="message-text">My Soul Mate,</p>
 
           <p class="message-text">
-            Today marks another year of your beautiful existence, and I find
-            myself overwhelmed with gratitude that the universe brought you into
-            this world on August 26th, 2002. You are not just my girlfriend; you
-            are my best friend, my confidant, my inspiration, and the keeper of
-            my heart.
+            Today is your birthday, and I feel so lucky that you were born on
+            August 26, 2002. You are not only my woman, but also my best friend,
+            my support, my dream, and the one who keeps my heart safe.
           </p>
 
           <p class="message-text">
-            Every morning I wake up thinking of your smile, and every night I
-            fall asleep grateful for another day spent loving you. Your laughter
-            is my favorite melody, your happiness is my life's mission, and your
-            love is the greatest gift I've ever received.
+            Every morning I wake up thinking of your smile. Every night I sleep
+            feeling thankful that I can love you one more day. Your laugh is my
+            favorite sound. Your happiness is my goal. Your love is the best
+            gift I ever got.
           </p>
 
           <p class="message-text">
-            You've taught me what true love means - it's in the way you hold my
-            hand when I'm scared, the way you believe in me when I doubt myself,
-            and the way you make even the ordinary moments feel like magic. With
-            you, I've discovered that home isn't a place; it's wherever you are.
+            You showed me what true love means. It's when you hold my hand when
+            I am afraid, when you believe in me even when I don't believe in
+            myself, and when you make small moments feel like magic. With you, I
+            understand that home is not a place, but it is wherever you are.
           </p>
 
           <p class="message-text">
-            On this special day, I want to promise you that I will love you
-            through every season of life. I will be your strength when you feel
-            weak, your smile when you're sad, and your biggest cheerleader in
-            all your dreams. You deserve the entire universe, and I'll spend my
-            lifetime trying to give it to you.
+            On this special day, I promise I will love you in every moment of
+            life. I will be your strength when you are weak, your smile when you
+            are sad, and I will always support your dreams. You deserve the
+            whole world, and I will spend my life trying to give it to you.
           </p>
 
           <p
             class="message-text"
             style="color: #ba87ff; font-size: 1.4rem; margin-top: 40px"
           >
-            Happy Birthday, my angel. Thank you for being born, for being you,
+            Happy Birthday, Set Amanda. Thank you for being born, for being you,
             and for choosing to share your precious heart with me. I love you
             beyond words, beyond time, beyond measure.
           </p>
@@ -577,20 +629,17 @@
           <div class="image-container">
             <div class="image-frame">
               <div class="image-placeholder">
-                <p style="font-size: 60px; margin-bottom: 20px">💑</p>
-                <p>Our Perfect Moment Together</p>
-                <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.7">
-                  Replace with:<br />
-                  &lt;img src="couple-photo.jpg" style="width:100%; height:100%;
-                  object-fit:cover;"&gt;
-                </p>
+                <img
+                  src="./file_0000000013cc6246ab9fa1b9802471c4.png"
+                  alt="Our Perfect Moment Together"
+                />
               </div>
             </div>
             <div class="decorative-elements">
-              <span class="corner-heart">💕</span>
-              <span class="corner-heart">💕</span>
-              <span class="corner-heart">💕</span>
-              <span class="corner-heart">💕</span>
+              <span class="corner-heart">💜</span>
+              <span class="corner-heart">💜</span>
+              <span class="corner-heart">💜</span>
+              <span class="corner-heart">💜</span>
             </div>
           </div>
         </div>
@@ -705,7 +754,7 @@
 
       <!-- Footer -->
       <div class="footer">
-        <p class="footer-text">You Are My Today, Tomorrow, and Always</p>
+        <p class="footer-text">You Are My Today, Tomorrow, and Always...</p>
       </div>
     </div>
 
@@ -715,7 +764,7 @@
         const container = document.getElementById("floatingHearts");
         const hearts = ["💜", "💕", "💖", "💗", "💓"];
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 20; i++) {
           const heart = document.createElement("div");
           heart.className = "heart-bg";
           heart.style.left = Math.random() * 100 + "%";
@@ -763,22 +812,6 @@
           setTimeout(() => trail.remove(), 1500);
         }, 100);
       });
-
-      // Add fade away animation
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes fadeAway {
-                0% { 
-                    opacity: 1; 
-                    transform: translate(0, 0) scale(1) rotate(0deg); 
-                }
-                100% { 
-                    opacity: 0; 
-                    transform: translate(0, -30px) scale(0.3) rotate(360deg); 
-                }
-            }
-        `;
-      document.head.appendChild(style);
 
       // Initialize animations
       createFloatingHearts();
